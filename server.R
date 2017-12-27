@@ -15,7 +15,7 @@ library(RWeka)
 #library(data.table)
 #library(dplyr)
 #library(wordcloud)
-source("C:/Users/Priyanka/Documents/Capstone_Predict_Word/myapp/NLP_Programe.R")
+source("NLP_Programe.R")
 
 
 shinyServer(function(input, output) {

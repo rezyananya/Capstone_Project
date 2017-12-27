@@ -1,9 +1,9 @@
 #Loading Unigram, bigram, trigram and fourgram files
 
-load("C:/Users/Priyanka/Documents/Capstone_Predict_Word/myapp/unigram.Rda")
-load("C:/Users/Priyanka/Documents/Capstone_Predict_Word/myapp/bigram.Rda")
-load("C:/Users/Priyanka/Documents/Capstone_Predict_Word/myapp/trigram.Rda")
-load("C:/Users/Priyanka/Documents/Capstone_Predict_Word/myapp/fourgram.Rda")
+load("unigram.Rda")
+load("bigram.Rda")
+load("trigram.Rda")
+load("fourgram.Rda")
 
 Wordform <- function(sentence){
   value = "your word would be..."

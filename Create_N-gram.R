@@ -1,8 +1,8 @@
 #Reading all the three (twitter, blogs and news)files
 
-Data_blog <- readLines("Capstone_Predict_Word/myapp/en_US.blogs.txt",skipNul = TRUE, warn = TRUE)
+Data_blog <- readLines("en_US.blogs.txt",skipNul = TRUE, warn = TRUE)
 #Data_news <- readLines("~/Data Science Capstone/Predict_Next_Word/en_US.news.txt",skipNul = TRUE, warn = TRUE)
-Data_twitter <- readLines("Capstone_Predict_Word/myapp/en_US.twitter.txt",skipNul = TRUE, warn = TRUE)
+Data_twitter <- readLines("en_US.twitter.txt",skipNul = TRUE, warn = TRUE)
 
 library(ggplot2)
 library(NLP)
@@ -62,23 +62,23 @@ Frequency_gm1 <- rowSums(as.matrix(One_gram[Frequency_1,]))
 Frequency_gm1 <- data.frame(unigram=names(Frequency_gm1), frequency=Frequency_gm1)
 Frequency_gm1 <- Frequency_gm1[order(-Frequency_gm1$frequency),]
 Unigram_Frequency <- setDT(Frequency_gm1)
-save(Unigram_Frequency,file="Capstone_Predict_Word/myapp/unigram.Rda")
+save(Unigram_Frequency,file="unigram.Rda")
 
 Frequency_2 <- findFreqTerms(Two_gram, lowfreq = 3)
 Frequency_gm2 <- rowSums(as.matrix(Two_gram[Frequency_2,]))
 Frequency_gm2 <- data.frame(bigram=names(Frequency_gm2), frequency=Frequency_gm2)
 Frequency_gm2 <- Frequency_gm2[order(-Frequency_gm2$frequency),]
 Bigram_Frequency <- setDT(Frequency_gm2)
-save(Bigram_Frequency,file="Capstone_Predict_Word/myapp/bigram.Rda")
+save(Bigram_Frequency,file="bigram.Rda")
 
 Frequency_3 <- findFreqTerms(Three_gram, lowfreq = 2)
 Frequency_gm3 <- rowSums(as.matrix(Three_gram[Frequency_3,]))
 Frequency_gm3 <- data.frame(trigram=names(Frequency_gm3), frequency=Frequency_gm3)
 Trigram_Frequency <- setDT(Frequency_gm3)
-save(Trigram_Frequency,file="Capstone_Predict_Word/myapp/trigram.Rda")
+save(Trigram_Frequency,file="trigram.Rda")
 
 Frequency_4 <- findFreqTerms(Four_gram, lowfreq = 1)
 Frequency_gm4 <- rowSums(as.matrix(Four_gram[Frequency_4,]))
 Frequency_gm4 <- data.frame(fourgram=names(Frequency_gm4), frequency=Frequency_gm4)
 Fourgram_Frequency <- setDT(Frequency_gm4)
-save(Fourgram_Frequency,file="Capstone_Predict_Word/myapp/fourgram.Rda")
+save(Fourgram_Frequency,file="fourgram.Rda")
